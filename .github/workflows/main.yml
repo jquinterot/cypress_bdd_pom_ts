@@ -11,7 +11,8 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@v6
-        runTests: false
-        
+        with:
+          runTests: false
+
       - name: Run cucumber tag
         run: npm run cy:run:tag
