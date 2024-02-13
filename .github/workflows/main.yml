@@ -15,4 +15,4 @@ jobs:
           runTests: false
 
       - name: Run cucumber tag test
-        run: npm run cy:run:tag
+        run: npm run cy:run:regression
