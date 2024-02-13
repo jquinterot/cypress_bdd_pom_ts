@@ -23,7 +23,7 @@ async function setupNodeEvents(
 
 export default defineConfig({
   e2e: {
-    baseUrl: "https://duckduckgo.com",
+    baseUrl: "https://www.demoblaze.com/",
     specPattern: "**/**/**/*.feature",
     setupNodeEvents,
     

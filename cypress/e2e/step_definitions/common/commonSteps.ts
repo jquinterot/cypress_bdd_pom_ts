@@ -1,5 +1,5 @@
-import { When } from "@badeball/cypress-cucumber-preprocessor";
+import { Given, When } from "@badeball/cypress-cucumber-preprocessor";
 
-When("I visit duckduckgo.com", () => {
+Given("I visit Demoblaze.com", () => {
     cy.visit('');
   });

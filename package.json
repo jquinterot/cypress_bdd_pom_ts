@@ -6,7 +6,7 @@
   "scripts": {
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
-    "cy:run:tag": "npx cypress run --env tags='@foo'"
+    "cy:run:regression": "npx cypress run --env tags='@regression'"
   },
   "author": "",
   "license": "ISC",

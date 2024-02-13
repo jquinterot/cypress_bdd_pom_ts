@@ -1,4 +1,3 @@
-import { should } from "chai";
 import { CartPage } from "../pages/CartPage";
 
 export class CartActions {
