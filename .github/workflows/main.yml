@@ -11,4 +11,5 @@ jobs:
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Run cucumber tag
+        uses: cypress-io/github-action@v6
         run: npm run cy:run:tag
