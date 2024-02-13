@@ -9,10 +9,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Cypress run
+      - name: Install Cypress
         uses: cypress-io/github-action@v6
         with:
           runTests: false
 
-      - name: Run cucumber tag
+      - name: Run cucumber tag test
         run: npm run cy:run:tag
