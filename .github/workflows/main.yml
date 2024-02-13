@@ -3,7 +3,7 @@ name: Cypress Tests
 on: push
 
 jobs:
-  cypress-run:
+  regression:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -14,5 +14,5 @@ jobs:
         with:
           runTests: false
 
-      - name: Run cucumber tag test
+      - name: Run regression
         run: npm run cy:run:regression
