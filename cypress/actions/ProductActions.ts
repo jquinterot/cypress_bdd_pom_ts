@@ -11,8 +11,8 @@ export class ProductActions {
        expect(this.productPage.getProductLabel(product).should('have.text', `${product}`));
     }
   
-     checkProductPrice() {
-       expect(this.productPage.getPriceLabel('$360').should('have.text',`$360 *includes tax`));
+     checkProductPrice(price:string) {
+       expect(this.productPage.getPriceLabel(`$${price}`).should('have.text',`$${price} *includes tax`));
     }
   
      addToCart(){

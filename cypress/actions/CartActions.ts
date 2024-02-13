@@ -13,11 +13,13 @@ export class CartActions {
     );
   }
 
-  deleteProductFromCard(product: string) {
+  deleteProductFromCard() {
     this.cartPage.getDeleteButton().click();
+  }
+
+  isProductDeleted(product: string) {
     cy.reload();
-    this.cartPage.getAddedProductTitle(product).should('not.exist');
-  
+    this.cartPage.getAddedProductTitle(product).should("not.exist");
   }
 
   selectPlaceOrder() {

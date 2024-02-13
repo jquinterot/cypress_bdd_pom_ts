@@ -1,6 +1,6 @@
 import { When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import { CartActions } from "../../../actions/CartActions";
-import { Products } from "../../../helpers/enums/Products";
+import { Phones } from "../../../helpers/enums/Products";
 import { PlaceOrderActions } from "../../../actions/PlaceOrderActions";
 import { johnInfo } from "../../../helpers/objects/CustoemrInfo";
 import { johnCardInfo } from "../../../helpers/objects/CardInfo";
@@ -8,10 +8,16 @@ import { johnCardInfo } from "../../../helpers/objects/CardInfo";
 const cartActions = new CartActions();
 const placeOrderActions = new PlaceOrderActions();
 
-When("places the order", () => {
-  cartActions.deleteProductFromCard(Products.GALAXY_S6);
-  cartActions.selectPlaceOrder();
+When("deletes product", () => {
+  cartActions.deleteProductFromCard();
+});
 
+Then("product {string} is deleted", (product: string) => {
+  cartActions.isProductDeleted(product);
+});
+
+When("places the order", () => {
+  cartActions.selectPlaceOrder();
   placeOrderActions.fillName(johnInfo.name);
   placeOrderActions.fillCountry(johnInfo.country);
   placeOrderActions.fillCity(johnInfo.city);
