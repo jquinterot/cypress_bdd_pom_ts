@@ -2,7 +2,6 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import { HomeActions } from "../../../actions/HomeActions";
 import { ProductActions } from "../../../actions/ProductActions";
 import { CartActions } from "../../../actions/CartActions";
-import { PhonePrices } from "../../../helpers/enums/Products";
 import { MenuOptions } from "../../../helpers/enums/MenuOptions";
 
 const homeActions = new HomeActions();

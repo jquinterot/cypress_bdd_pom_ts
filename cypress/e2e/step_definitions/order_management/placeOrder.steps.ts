@@ -1,6 +1,5 @@
 import { When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import { CartActions } from "../../../actions/CartActions";
-import { Phones } from "../../../helpers/enums/Products";
 import { PlaceOrderActions } from "../../../actions/PlaceOrderActions";
 import { johnInfo } from "../../../helpers/objects/CustoemrInfo";
 import { johnCardInfo } from "../../../helpers/objects/CardInfo";
