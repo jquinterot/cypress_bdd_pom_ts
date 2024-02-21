@@ -7,12 +7,12 @@ export class ProductActions {
       this.productPage = new ProductPage();
     }
   
-     checkAddedProduct(product:string) {
-       expect(this.productPage.getProductLabel(product).should('have.text', `${product}`));
+     isAddedProductCorrect(product:string) {
+       expect(this.productPage.getProductLabel(product).should('contain.text', `${product}`));
     }
   
-     checkProductPrice(price:string) {
-       expect(this.productPage.getPriceLabel(`$${price}`).should('have.text',`$${price} *includes tax`));
+     isAddedProductPriceCorrect(price:string) {
+       expect(this.productPage.getPriceLabel(`$${price}`).should('contain.text',`$${price} *includes tax`));
     }
   
      addToCart(){

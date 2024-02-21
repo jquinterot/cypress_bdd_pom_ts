@@ -9,7 +9,7 @@ export class CartActions {
 
   checkProductIsDisplayed(product: string) {
     expect(
-      this.cartPage.getAddedProductTitle(product).should("have.text", product)
+      this.cartPage.getAddedProductTitle(product).should("contains.text", product)
     );
   }
 

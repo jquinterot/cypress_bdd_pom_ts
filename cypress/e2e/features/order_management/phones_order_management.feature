@@ -1,4 +1,4 @@
-Feature: Demoblaze Order Management
+Feature: Demoblaze Phones Order Management
 
   @regression @TC01
   Scenario: Check that a Galaxy S6 product can be added to the cart

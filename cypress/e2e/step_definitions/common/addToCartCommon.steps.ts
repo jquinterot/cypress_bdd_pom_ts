@@ -21,8 +21,8 @@ When("selects {string} product", (product:string) => {
 });
 
 Then("product {string} with price {string} is displayed in product page", (product:string, price:string) => {
-  productActions.checkAddedProduct(product);
-  productActions.checkProductPrice(price);
+  productActions.isAddedProductCorrect(product);
+  productActions.isAddedProductPriceCorrect(price);
 });
 
 When("adds the product to the cart", () => {
@@ -32,7 +32,6 @@ When("adds the product to the cart", () => {
 When("goes to cart", () => {
   homeActions.selectMenuOption(MenuOptions.CART);
 });
-
 
 Then("product {string} is added to cart", (product:string) => {
   cartActions.checkProductIsDisplayed(product);
