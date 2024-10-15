@@ -23,3 +23,17 @@ Feature: Demoblaze Laptops Order Management
     Then product "Samsung galaxy s6" is deleted
     When places the order
     Then thank you message is displayed
+
+  @regression @TC07
+  Scenario: Check that an order with MacBook air product can be placed
+    Given I visit Demoblaze.com
+    When selects "Laptop" category
+    And selects "MacBook air" product
+    Then product "MacBook air" with price "700" is displayed in product page
+    When adds the product to the cart
+    And goes to cart
+    Then product "MacBook air" is added to cart
+    When deletes product
+    Then product "MacBook air" is deleted
+    When places the order
+    Then thank you message is displayed
