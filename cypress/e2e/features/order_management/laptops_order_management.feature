@@ -1,6 +1,7 @@
+@laptops @e2e
 Feature: Demoblaze Laptops Order Management
 
-  @regression @TC05
+  @regression @smoke @TC05
   Scenario: Check that Sony Vaio i7 product can be added to the cart
     Given I visit Demoblaze.com
     When selects "Laptop" category
