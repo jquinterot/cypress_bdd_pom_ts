@@ -9,7 +9,7 @@ const productActions = new ProductActions();
 const cartActions = new CartActions();
 
 Given("I visit Demoblaze.com", () => {
-  cy.visit("");
+  cy.visit("/"); // Uses the baseUrl from cypress.config.ts
 });
 
 When("selects {string} category", (category: string) => {
