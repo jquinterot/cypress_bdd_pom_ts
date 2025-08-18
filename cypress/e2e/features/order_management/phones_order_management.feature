@@ -1,6 +1,6 @@
 Feature: Demoblaze Phones Order Management
 
-  @regression @TC01
+  @regression @TC01 @smoke
   Scenario: Check that a Galaxy S6 product can be added to the cart
     Given I visit Demoblaze.com
     When selects "Phone" category
