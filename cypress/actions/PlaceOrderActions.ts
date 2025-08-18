@@ -9,10 +9,12 @@ export class PlaceOrderActions {
   }
 
    fillName(name:string) {
+     this.placeOrderPage.getNameInput().should('be.visible');
      this.placeOrderPage.getNameInput().type(name);
   }
 
    fillCountry(country:string) {
+     this.placeOrderPage.getCountryInput().should('be.visible');
      this.placeOrderPage.getCountryInput().type(country);
   }
 
