@@ -21,7 +21,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           start: npm start
-          wait-on: 'http://localhost:3000' # Update or remove if no server is required
+          wait-on: 'https://www.demoblaze.com/' # Update or remove if no server is required
           record: true
           parallel: true
         env:
