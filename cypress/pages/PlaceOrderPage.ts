@@ -8,4 +8,5 @@ export class PlaceOrderPage {
   getYearInput = () => cy.get('#year');
   getPurchaseButton = () => cy.contains('Purchase');
   getThankYouLabel = () => cy.contains('Thank you for your purchase!');
+  getConfirmOrderButton = () => cy.get('.confirm').contains(`OK`);
 }

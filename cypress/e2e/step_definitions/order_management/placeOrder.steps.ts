@@ -28,4 +28,5 @@ When("places the order", () => {
 
 Then("thank you message is displayed", () => {
   placeOrderActions.isThankYouMessageIsDisplayed();
+  placeOrderActions.selectConfirmOrder();
 });

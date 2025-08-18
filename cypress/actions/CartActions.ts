@@ -25,4 +25,8 @@ export class CartActions {
   selectPlaceOrder() {
     this.cartPage.getPlaceOrderButton().click();
   }
+
+  selectConfirmOrder() {
+    this.cartPage.getConfirmOrderButton().click();
+  }
 }

@@ -41,4 +41,8 @@ export class PlaceOrderActions {
    isThankYouMessageIsDisplayed(){
      expect(this.placeOrderPage.getThankYouLabel().should('be.visible'));
   }
+
+    selectConfirmOrder() {
+    this.placeOrderPage.getConfirmOrderButton().click();
+  }
 }
