@@ -23,6 +23,7 @@ async function setupNodeEvents(
 
 export default defineConfig({
   e2e: {
+    projectId: "c8uj3v",
     baseUrl: "https://www.demoblaze.com/",
     specPattern: "**/**/**/*.feature",
     setupNodeEvents,
