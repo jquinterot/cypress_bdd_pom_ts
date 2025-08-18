@@ -11,17 +11,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Start Server (if required)
-        run: npm run cy:run:regression
-
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          start: npm start
-          wait-on: 'https://www.demoblaze.com/' # Update or remove if no server is required
+          command: npx cypress run --env TAGS="@regression"
           record: true
           parallel: true
         env:
