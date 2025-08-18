@@ -13,8 +13,7 @@ export class BasePage {
   getElement(selector: string) {
     return cy.get(selector);
   }
-
-  // Common method to click an element
+  
   clickElement(selector: string) {
     this.getElement(selector).click();
   }
