@@ -1,5 +1,5 @@
 # Use the official Cypress base image
-FROM cypress/included:12.17.1
+FROM cypress/included:15.10.0
 
 # Set the working directory
 WORKDIR /e2e

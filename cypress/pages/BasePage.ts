@@ -1,30 +1,37 @@
 export class BasePage {
-  // Common method to visit a URL
-  visit(url: string) {
-    cy.visit(url);
+  visit(path: string = '') {
+    cy.visit(path);
   }
 
-  // Common method to get an element by text
-  getElementByText(selector: string, text: string) {
+  click(selector: string) {
+    cy.get(selector).click();
+  }
+
+  type(selector: string, text: string) {
+    cy.get(selector).clear().type(text);
+  }
+
+  contains(selector: string, text: string) {
     return cy.contains(selector, text);
   }
 
-  // Common method to get an element by selector
-  getElement(selector: string) {
+  get(selector: string) {
     return cy.get(selector);
   }
-  
-  clickElement(selector: string) {
-    this.getElement(selector).click();
+
+  shouldContain(selector: string, text: string) {
+    cy.get(selector).should('contain.text', text);
   }
 
-  // Common method to type into an input field
-  typeIntoField(selector: string, text: string) {
-    this.getElement(selector).type(text);
+  shouldBeVisible(selector: string) {
+    cy.get(selector).should('be.visible');
   }
 
-  // Common method to assert that an element contains text
-  assertElementContainsText(selector: string, text: string) {
-    this.getElement(selector).should('contain.text', text);
+  shouldNotExist(selector: string) {
+    cy.get(selector).should('not.exist');
+  }
+
+  reload() {
+    cy.reload();
   }
 }

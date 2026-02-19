@@ -7,15 +7,11 @@ export class HomeActions {
   }
 
   checkHomePageTitle() {
-    expect(
-      cy.title().should("eq", "STORE")
-    );
+    cy.title().should('eq', 'STORE');
   }
 
   verifyHomePageNavbarTitle() {
-    expect(
-      this.homePage.getNavBarTitle().should("contains.text", "PRODUCT STORE")
-    );
+    this.homePage.getNavBarTitle().should('contain.text', 'PRODUCT STORE');
   }
 
   selectCategory(category: string) {

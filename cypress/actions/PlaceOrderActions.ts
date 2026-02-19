@@ -1,6 +1,5 @@
 import { PlaceOrderPage } from '../pages/PlaceOrderPage';
 
-
 export class PlaceOrderActions {
   private placeOrderPage: PlaceOrderPage;
 
@@ -8,41 +7,41 @@ export class PlaceOrderActions {
     this.placeOrderPage = new PlaceOrderPage();
   }
 
-   fillName(name:string) {
-     this.placeOrderPage.getNameInput().should('be.visible');
-     this.placeOrderPage.getNameInput().type(name);
+  fillName(name: string) {
+    this.placeOrderPage.getNameInput().should('be.visible');
+    this.placeOrderPage.getNameInput().type(name);
   }
 
-   fillCountry(country:string) {
-     this.placeOrderPage.getCountryInput().should('be.visible');
-     this.placeOrderPage.getCountryInput().type(country);
+  fillCountry(country: string) {
+    this.placeOrderPage.getCountryInput().should('be.visible');
+    this.placeOrderPage.getCountryInput().type(country);
   }
 
-   fillCity(city:string) {
-     this.placeOrderPage.getCityInput().type(city);
+  fillCity(city: string) {
+    this.placeOrderPage.getCityInput().type(city);
   }
 
-   fillCard(cardNumber:string) {
-     this.placeOrderPage.getCardInput().type(cardNumber);
+  fillCard(cardNumber: string) {
+    this.placeOrderPage.getCardInput().type(cardNumber);
   }
 
-   fillMonth(month:string) {
-     this.placeOrderPage.getMonthInput().type(month);
+  fillMonth(month: string) {
+    this.placeOrderPage.getMonthInput().type(month);
   }
 
-   fillYear(year:string) {
-     this.placeOrderPage.getYearInput().type(year);
+  fillYear(year: string) {
+    this.placeOrderPage.getYearInput().type(year);
   }
 
-   selectPurchase(){
-     this.placeOrderPage.getPurchaseButton().click();
+  selectPurchase() {
+    this.placeOrderPage.getPurchaseButton().click();
   }
 
-   isThankYouMessageIsDisplayed(){
-     expect(this.placeOrderPage.getThankYouLabel().should('be.visible'));
+  isThankYouMessageIsDisplayed() {
+    this.placeOrderPage.getThankYouLabel().should('be.visible');
   }
 
-    selectConfirmOrder() {
+  selectConfirmOrder() {
     this.placeOrderPage.getConfirmOrderButton().click();
   }
 }

@@ -8,9 +8,7 @@ export class CartActions {
   }
 
   checkProductIsDisplayed(product: string) {
-    expect(
-      this.cartPage.getAddedProductTitle(product).should("contains.text", product)
-    );
+    this.cartPage.getAddedProductTitle(product).should('contain.text', product);
   }
 
   deleteProductFromCard() {
@@ -19,14 +17,10 @@ export class CartActions {
 
   isProductDeleted(product: string) {
     cy.reload();
-    this.cartPage.getAddedProductTitle(product).should("not.exist");
+    this.cartPage.getAddedProductTitle(product).should('not.exist');
   }
 
   selectPlaceOrder() {
     this.cartPage.getPlaceOrderButton().click();
-  }
-
-  selectConfirmOrder() {
-    this.cartPage.getConfirmOrderButton().click();
   }
 }

@@ -11,10 +11,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.6.4"
+    "@types/node": "^25.3.0",
+    "cypress": "^15.10.0",
+    "tsconfig-paths": "^4.2.0"
   },
   "dependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^20.0.1",
+    "@badeball/cypress-cucumber-preprocessor": "^24.0.1",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "typescript": "^5.3.3"
   }

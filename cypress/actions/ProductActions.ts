@@ -7,15 +7,15 @@ export class ProductActions {
       this.productPage = new ProductPage();
     }
   
-     isAddedProductCorrect(product:string) {
-       expect(this.productPage.getProductLabel(product).should('contain.text', `${product}`));
+    isAddedProductCorrect(product: string) {
+      this.productPage.getProductLabel(product).should('contain.text', product);
     }
   
-     isAddedProductPriceCorrect(price:string) {
-       expect(this.productPage.getPriceLabel(`$${price}`).should('contain.text',`$${price} *includes tax`));
+    isAddedProductPriceCorrect(price: string) {
+      this.productPage.getPriceLabel(`$${price}`).should('contain.text', `$${price} *includes tax`);
     }
   
-     addToCart(){
-       this.productPage.getAddToCartButton().click();
+    addToCart() {
+      this.productPage.getAddToCartButton().click();
     }
   }
