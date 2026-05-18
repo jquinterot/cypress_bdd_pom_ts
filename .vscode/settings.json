@@ -1,0 +1,38 @@
+{
+  "cucumber.features": [
+    "cypress/e2e/features/**/*.feature"
+  ],
+  "cucumber.glue": [
+    "cypress/e2e/step_definitions/**/*.ts"
+  ],
+  "cucumberautocomplete.steps": [
+    {
+      "label": "order_management",
+      "files": [
+        "cypress/e2e/step_definitions/common/*.ts"
+      ]
+    },
+    {
+      "label": "hooks",
+      "files": [
+        "cypress/e2e/step_definitions/hooks.ts"
+      ]
+    }
+  ],
+  "cucumberautocomplete.gherkinDefinitionCheck": true,
+  "cucumberautocomplete.onErrorFail": true,
+  "cucumberautocomplete.customParameters": [
+    {
+      "label": "string",
+      "value": "([^\\"]+)"
+    }
+  ],
+  "[gherkin]": {
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true
+  }
+}

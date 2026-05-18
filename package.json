@@ -6,13 +6,14 @@
   "scripts": {
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
-    "cy:run:regression": "npx cypress run --env tags='@regression'"
+    "cy:run:regression": "npx cypress run --env tags='@regression'",
+    "cy:run:parallel": "npx cypress run --parallel --group parallel"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^25.3.0",
-    "cypress": "^15.10.0",
+    "cypress": "^15.15.0",
     "tsconfig-paths": "^4.2.0"
   },
   "dependencies": {

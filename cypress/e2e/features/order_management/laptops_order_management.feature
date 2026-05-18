@@ -21,7 +21,7 @@ Feature: Demoblaze Laptops Order Management
     And goes to cart
     Then product "Sony vaio i7" is added to cart
     When deletes product
-    Then product "Samsung galaxy s6" is deleted
+    Then product "Sony vaio i7" is deleted
     When places the order
     Then thank you message is displayed
 

@@ -3,12 +3,12 @@ export class BasePage {
     cy.visit(path);
   }
 
-  click(selector: string) {
-    cy.get(selector).click();
+  click(selector: string, timeout = 10000) {
+    cy.get(selector, { timeout }).should('be.visible').click();
   }
 
-  type(selector: string, text: string) {
-    cy.get(selector).clear().type(text);
+  type(selector: string, text: string, timeout = 10000) {
+    cy.get(selector, { timeout }).should('be.visible').clear().type(text);
   }
 
   contains(selector: string, text: string) {
@@ -19,16 +19,27 @@ export class BasePage {
     return cy.get(selector);
   }
 
-  shouldContain(selector: string, text: string) {
-    cy.get(selector).should('contain.text', text);
+  shouldContain(selector: string, text: string, timeout = 10000) {
+    cy.get(selector, { timeout }).should('contain.text', text);
   }
 
-  shouldBeVisible(selector: string) {
-    cy.get(selector).should('be.visible');
+  shouldBeVisible(selector: string, timeout = 10000) {
+    cy.get(selector, { timeout }).should('be.visible');
   }
 
-  shouldNotExist(selector: string) {
-    cy.get(selector).should('not.exist');
+  shouldNotExist(selector: string, timeout = 10000) {
+    cy.get(selector, { timeout }).should('not.exist');
+  }
+
+  waitAndClick(selector: string, timeout = 15000) {
+    cy.wait(100);
+    cy.get(selector, { timeout }).then(($el) => {
+      if ($el.is(':visible')) {
+        $el.click();
+      } else {
+        cy.wait(200).then(() => $el.click());
+      }
+    });
   }
 
   reload() {

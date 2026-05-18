@@ -2,7 +2,8 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "module": "nodenext",
-    "moduleResolution": "node",
+    "moduleResolution": "NodeNext",
+    "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "paths": {
       "@pages/*": ["cypress/pages/*"],

@@ -1,7 +1,3 @@
-// Cypress 15 Configuration
-// Version: 15.10.0
-// Updated: 2026-02-19
-// Key features: Improved test runner UX, better cross-origin handling with cy.origin()
 import { defineConfig } from "cypress";
 import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
 import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
@@ -36,29 +32,32 @@ async function setupNodeEvents(
   return config;
 }
 
+const getEnvUrl = (): string => {
+  const env = process.env.CYPRESS_ENV || "prod";
+  const envUrls: Record<string, string> = {
+    dev: "https://dev.demoblaze.com/",
+    staging: "https://staging.demoblaze.com/",
+    prod: "https://www.demoblaze.com/",
+  };
+  return envUrls[env] || envUrls.prod;
+};
+
 export default defineConfig({
   e2e: {
-    // Cypress 15: Project configuration
     projectId: "c8uj3v",
-    baseUrl: "https://www.demoblaze.com/",
+    baseUrl: getEnvUrl(),
     specPattern: "**/**/**/*.feature",
     setupNodeEvents,
-    
-    // Cypress 15: Performance & Stability
-    experimentalRunAllSpecs: false,
+
     chromeWebSecurity: false,
-    
-    // Cypress 15: Viewport settings
     viewportWidth: 1280,
     viewportHeight: 720,
-    
-    // Cypress 15: Recording settings
     video: false,
     screenshotOnRunFailure: true,
-    
-    // Cypress 15: Timeout settings
     defaultCommandTimeout: 10000,
     requestTimeout: 15000,
     responseTimeout: 15000,
+
+    experimentalRunAllSpecs: false,
   },
 });

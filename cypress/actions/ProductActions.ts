@@ -1,21 +1,22 @@
 import { ProductPage } from "../pages/ProductPage";
 
 export class ProductActions {
-    private productPage: ProductPage;
-  
-    constructor() {
-      this.productPage = new ProductPage();
-    }
-  
-    isAddedProductCorrect(product: string) {
-      this.productPage.getProductLabel(product).should('contain.text', product);
-    }
-  
-    isAddedProductPriceCorrect(price: string) {
-      this.productPage.getPriceLabel(`$${price}`).should('contain.text', `$${price} *includes tax`);
-    }
-  
-    addToCart() {
-      this.productPage.getAddToCartButton().click();
-    }
+  private productPage: ProductPage;
+
+  constructor() {
+    this.productPage = new ProductPage();
   }
+
+  isAddedProductCorrect(product: string) {
+    this.productPage.getProductLabel(product).should('contain.text', product);
+  }
+
+  isAddedProductPriceCorrect(price: string) {
+    this.productPage.getPriceLabel(`$${price}`).should('contain.text', `$${price} *includes tax`);
+  }
+
+  addToCart() {
+    this.productPage.getAddToCartButton().click();
+    cy.on('window:alert', () => true);
+  }
+}

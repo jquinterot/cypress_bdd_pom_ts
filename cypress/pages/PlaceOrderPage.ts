@@ -1,4 +1,6 @@
-export class PlaceOrderPage {
+import { BasePage } from './BasePage';
+
+export class PlaceOrderPage extends BasePage {
   getTotalInput = () => cy.get('#totalm');
   getNameInput = () => cy.get('#name');
   getCountryInput = () => cy.get('#country');
